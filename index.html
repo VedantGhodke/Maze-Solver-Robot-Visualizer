@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.svg">
+	<link rel="stylesheet" href="styles.css">
+    <title>Vedant Ghodke - Maze Solver Robot - Visualizer</title>
+</head>
+<body> 
+	<div class="container">
+			<canvas id="canvas" width="1200" height="1200" ></canvas>
+		<div class="controls">
+			<a href="https://github.com/VEDANTGHODKE/Maze-Solver-Robot-Visualizer" style="color:black; text-decoration: none;"><b>Vedant Ghodke - GitHub Repository</b></a>
+			<button onclick="Astar()" class="astar"><b>Run A* Implementation</b></button>
+			<button onclick="dijkstras()"><b>Run Dijkstra Implementation</b></button>
+			<button onclick="DFS()"><b>Run Depth First Search (DFS) Implementation</b></button>
+			<br/>
+
+			<button onclick="recursiveBacktracker()"><b>Run Recursive Backtracker Maze Generation</b></button>
+			<button onclick="DFS_MazeGenerator()"><b>Run DFS Maze Generation</b></button>
+		
+			<br />	
+			<button onclick="createVerticalmaze()"><b>Create A Vertical Maze<b></button>
+			<button onclick="createHorizontalMaze()"><b>Create A Horizontal Maze</b>></button>
+			<button onclick="createDiagonalMaze()"><b>Create A Diagonal Maze</b></button>
+			<button onclick="createSpiralMaze()"><b>Create A Spiral Maze</b></button>
+	
+			<br />
+			<button id="reset" onclick="resetMaze()"><b>Reset Maze</b></button>
+			<button id="reset" onclick="clearPath()"><b>Clear Path</b></button>
+			<button id="reset" onclick="randomMaze()"><b>Generate A Random Maze</b></button>
+			<button onclick="createBlackMaze()"><b>Cover Entire Maze</b></button>
+			<br />
+
+			
+			<span class="selector">
+				<label for="distance" class="nav-link active pr-1"><b>Distance Measure</b></label>
+				<select class="form-control" id="distance"  >
+					<option>Euclidean Distance</option>
+					<option>Manhattan Distance</option>
+					<option>Chess Board Distance</option>
+					<option>Camberaa Distance</option>
+					<option>Cosine Distance</option>
+				</select>
+			</span>
+
+			<span class="selector">
+				<label for="Neighbours" class="nav-link active pr-1"><b>Neighbours</b>></label>
+				<select class="form-control" id="Neighbours" onchange="handelNeighboursChange()" >
+					<option>Diagonal Neighbours</option>
+					<option>Four-Adjcent Neighbours</option>
+					<option>All Eight Neighbours</option>
+				</select>
+			</span>
+		</div>
+		
+
+
+	
+
+
+
+
+		<table>
+			<tr>
+				<td>
+					Set Delay In Milliseconds:
+				</td>
+				<td>
+					<input type="number" onchange="handelSpeedChange(value)"  placeholder="Delay = 5ms Default" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Number Of Rows:  
+				</td>
+				<td>
+					<input type="number" onchange="handelRowsChange(value)"  placeholder="Rows = 25 By Default" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Number Of Columns:  
+				</td>
+				<td>
+					<input type="number" onchange="handelColumnssChange(value)"  placeholder="Columns = 50 By Default" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Probable Threshold For Random Maze:  
+				</td>
+				<td>
+					<input type="number" onchange="handelThresholdChange(value)"  placeholder="Threshold = 0.2 By Default" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Cell Seperation : 
+				</td>
+				<td>
+					<input type="number" onchange="handelCellSeperationChange(value)"  placeholder="Cell Seperation = 1px By Default" />
+				</td>
+			</tr>
+			
+		</table>
+	</div>
+
+	<div class="footer">
+		<div><b>Made By Vedant Ghodke, Shubham Deshmukh, Ninad Ekbote, Atharva Deshpande</b></div>
+		<div>
+			<a href="https://vedantghodke.github.io/Maze-Solver-Robot-Visualizer/">Vedant Ghodke - GitHub Repository</a>
+		</div>
+	</div>
+	
+	
+	<script src="scripts/main.js"></script>
+	<script src="scripts/board.js"></script>
+	<script src="scripts/Astar.js"></script>
+	<script src="scripts/prims_maze_generation.js"></script>
+	<script src="scripts/recursive_backtracker.js"></script>
+	<script src="scripts/depthFirstSearch_MazeGenerator.js"></script>
+	<script src="scripts/Dijkstra.js"></script>
+	<script src="scripts/DepthFirstSearch.js"></script>
+</body>
+</html>
